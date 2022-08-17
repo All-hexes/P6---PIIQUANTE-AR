@@ -1,15 +1,17 @@
+require('dotenv').config()
 const { application } = require("express");
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-const bodyParser = require("body-parser");
-const stuffRoutes = require("./routes/stuff");
+// const stuffRoutes = require("./routes/stuff");
 const userRoutes = require("./routes/user");
 const app = express();
 
+const { DB_USER, DB_NAME, DB_SERVER, DB_PASSWORD } = process.env
+
 mongoose
     .connect(
-        "mongodb+srv://robal22:eCXwVq5RaynnB6kF@cluster0.yiayu.mongodb.net/?retryWrites=true&w=majority",
+        `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_SERVER}/?${DB_NAME}=true&w=majority`,
         {
             useNewUrlParser: true,
             useUnifiedTopology: true,
@@ -35,7 +37,7 @@ app.use((req, res, next) => {
 
 app.use("/images", express.static(path.join(__dirname, "images")));
 
-app.use("/api/stuff", stuffRoutes);
+// app.use("/api/stuff", stuffRoutes);
 
 app.use("/api/auth", userRoutes);
 
