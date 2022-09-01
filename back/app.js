@@ -18,7 +18,7 @@ app.use(express.json());
 
 mongoose
   .connect(
-    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_SERVER}/?${DB_NAME}=true&w=majority`,
+    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_SERVER}/?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
@@ -47,5 +47,9 @@ app.use('/api/auth', userRoutes);
 app.use('/api/sauces', sauceRoutes);
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
+
+app.get("*", (req, res) => {
+  res.status(404).send({ message: "Not found !" })
+});
 
 module.exports = app;
