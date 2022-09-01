@@ -1,4 +1,3 @@
-// on importe la méthode du npm
 const jwt = require("jsonwebtoken");
 const { request } = require("../app");
 
