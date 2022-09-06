@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptor } from './interceptors/auth-interceptor';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Testsauce1Component } from './testsauce1/testsauce1.component';
+import { Testsauce2Component } from './testsauce2/testsauce2.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     SauceListComponent,
     SingleSauceComponent,
     SauceFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    Testsauce1Component,
+    Testsauce2Component
   ],
   imports: [
     BrowserModule,

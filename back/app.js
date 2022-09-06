@@ -19,6 +19,7 @@ app.use(express.json());
 mongoose
   .connect(
     `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_SERVER}/?retryWrites=true&w=majority`,
+    //`mongodb+srv://newuser:3dzaxzFTjdKJ5vg@cluster0.fijosz2.mongodb.net/?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
