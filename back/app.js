@@ -1,3 +1,4 @@
+require('dotenv').config({ path: '.env' });
 const express = require('express');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/user');
@@ -5,7 +6,6 @@ const sauceRoutes = require('./routes/sauce');
 const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
-require('dotenv').config({ path: '.env' });
 const { DB_USER, DB_NAME, DB_SERVER, DB_PASSWORD } = process.env;
 
 const app = express();
